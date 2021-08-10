@@ -7,7 +7,7 @@ export class CardColors extends Component {
         return (
             <div>
 
-                <Row xs={1} md={2} className="g-4">
+                <Row xs={1} md={6} className="g-4">
                     {this.props.colors.map((item, idx) => (
                         <Col>
                             <Card>

@@ -10,7 +10,6 @@ class AllDataAPI extends Component {
         super(props);
         this.state = {
             colors : [],
-            showModal : false,
            
         }
     }
@@ -36,7 +35,7 @@ class AllDataAPI extends Component {
 
             email : this.props.auth0.user.email,
             title : this.state.colors[idx].title,
-            imageUrl : this.state.colors[idx].imageUrl
+            imageUrl : this.state.colors[idx].imageUrl,
         }
 
         axios.post(`${process.env.REACT_APP_SERVER}/postcolor` ,colorInfo ).catch((error) => {
@@ -45,11 +44,7 @@ class AllDataAPI extends Component {
 
     }
 
-    showUpdateModal = () => {
-     this.setState({
-         showModal : true
-     })
-    }
+
 
     render() {
         return (
@@ -60,7 +55,7 @@ class AllDataAPI extends Component {
             </div>
             <div>
                    <CardColors colors={this.state.colors} addToFav={this.addToFavourites}/>
-             <UpdateModal show={this.state.showModal}/>
+             
             </div>
             </>
         )
